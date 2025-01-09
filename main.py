@@ -347,7 +347,7 @@ async def leave(ctx):
         except discord.NotFound:
             pass  # กรณีที่ข้อความถูกลบไปแล้ว
     # ส่งข้อความออกจากช่องเสียงและลบมันหลังจาก 3 วินาที
-    message = await ctx.send("แคทเทอรีนออกจากช่องเสียงแล้ว 😢")
+    message = await ctx.send("ออมมี่ออกจากช่องเสียงแล้ว 😢")
     await asyncio.sleep(3)
     await message.delete()
 
@@ -377,7 +377,6 @@ async def next_song(ctx):
     await message.delete()
 
 # นำเข้าเพลงจาก JSON
-
 def load_favorites():
     if not os.path.exists(FAVORITES_FILE):
         return []  # Return an empty list if the file doesn't exist
