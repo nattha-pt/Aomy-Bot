@@ -1,25 +1,20 @@
 import discord
 import asyncio
 import json
-from discord import opus
 import os
-os.environ["OPUS_LIB_PATH"] = "/opt/homebrew/lib/libopus.dylib"
-# Load Opus library
-if not opus.is_loaded():
-    opus.load_opus("/opt/homebrew/lib/libopus.dylib")
 import re
 import random
 import yt_dlp
 from discord.ext import commands, tasks
 from discord.ui import Button, View
 from collections import deque
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 FAVORITES_FILE = 'favorites.json'
 
 # โหลด environment variables
-# load_dotenv()
-TOKEN = ''
+load_dotenv()
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 # ตรวจสอบว่า TOKEN ถูกตั้งค่าหรือไม่
 if TOKEN is None:
