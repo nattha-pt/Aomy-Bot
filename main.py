@@ -288,7 +288,7 @@ async def show_queue(ctx):
 async def pause(ctx):
     if ctx.voice_client and ctx.voice_client.is_playing():
         ctx.voice_client.pause()
-        message = await ctx.send('หยุดเล่นเพลงชั่วคราว หากต้องการเล่นเพลงต่อ ให้พิมพ์คำสั่ง "เล่นต่อ"')
+        message = await ctx.send('หยุดเล่นเพลง หากต้องการเล่นเพลงต่อใช้คำสั่ง ".เล่นต่อ", ".continue", ".cn" หรือ ▶️')
         await asyncio.sleep(3)
         await message.delete()
 
@@ -367,7 +367,7 @@ async def show_help(ctx):
     embed.add_field(name="> `ออกไป, leave, l`", value="ออกจากช่องเสียง", inline=False)
     embed.add_field(name="💡 ตัวอย่างการใช้งาน", value="`.p https://www.youtube.com/xxx/?`", inline=False)
     embed.add_field(name="💥 New! คำสั่งเล่นเพลง", value="สามารถวางลิงก์โดยไม่ต้องใช้ คำสั่ง `.p` ได้แล้วนะ", inline=False)
-    embed.set_image(url="https://embed.pixiv.net/artwork.php?illust_id=90077277&mdate=1621870500")
+    embed.set_image(url="https://i.pinimg.com/736x/7c/c5/fe/7cc5fe1ff9fa28395e8b4ac00029dec4.jpg")
     embed.set_footer(text="หากคุณมีคำถามเพิ่มเติม โปรดติดต่อผู้ดูแล BOT")
     message = await ctx.send(embed=embed)
     await asyncio.sleep(15)
