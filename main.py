@@ -40,8 +40,11 @@ async def check_voice_activity():
 
 @bot.event
 async def on_ready():
-    print(f'Bot is online as {bot.user.name}')
-    check_voice_activity.start() 
+    if bot.user:
+        print(f'Bot is online as {bot.user.name}')
+    else:
+        print('Bot user is not defined')
+    check_voice_activity.start()
 
 # ------------------------------------------------- MUSIC CONTROL -------------------------------------------------- #
 class MusicControlView(View):
@@ -370,11 +373,11 @@ async def show_help(ctx):
     await asyncio.sleep(15)
     await message.delete()
 
-@bot.command(name='พี่ออม', aliases=['aommy'])
-async def next_song(ctx):
-    message = await ctx.send("งานเสร็จหรือยังคะ?")
-    await asyncio.sleep(5)
-    await message.delete()
+# @bot.command(name='พี่ออม', aliases=['aommy'])
+# async def next_song(ctx):
+#     message = await ctx.send("งานเสร็จหรือยังคะ?")
+#     await asyncio.sleep(5)
+#     await message.delete()
 
 # นำเข้าเพลงจาก JSON
 def load_favorites():

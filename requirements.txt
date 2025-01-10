@@ -1,0 +1,6 @@
+# requirements.txt
+flask
+discord.py
+PyNaCl
+yt_dlp
+python-dotenv
